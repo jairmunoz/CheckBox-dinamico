@@ -1,0 +1,20 @@
+<section class="example-section">
+  <span class="example-list-section">
+    <li *ngFor="let tarea of tareas">
+      <mat-checkbox
+        (click)="$event.stopPropagation()"
+        (change)="$event ? selection.toggle(tarea) : null"
+        [checked]="selection.isSelected(tarea)"
+      >
+        {{tarea.name}}
+      </mat-checkbox>
+    </li>
+  </span>
+  <pre>
+    {{selection.selected|json}}
+  </pre>
+</section>
+
+<!-- Copyright 2022 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at https://angular.io/license -->
